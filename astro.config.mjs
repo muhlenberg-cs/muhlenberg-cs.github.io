@@ -20,7 +20,7 @@ export default defineConfig({
           label: "Start here",
           items: [
             { label: "Before the first class", slug: "start" },
-            { label: "1. GitHub and Classroom", slug: "start/github" },
+            { label: "1. GitHub", slug: "start/github" },
             { label: "2. Install mule", slug: "start/install-mule" },
             { label: "3. Ollama and the model", slug: "start/ollama" },
             { label: "4. Terminal and font", slug: "start/terminal" },
