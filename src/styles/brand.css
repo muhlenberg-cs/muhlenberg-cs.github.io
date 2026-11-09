@@ -1,0 +1,22 @@
+/* Muhlenberg cardinal as the accent; MuleCode's JetBrains Mono for code. */
+:root {
+  --sl-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* dark mode (Starlight's default :root) */
+  --sl-color-accent-low: #3d1219;
+  --sl-color-accent: #c94a5b;
+  --sl-color-accent-high: #f6cdd2;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #f6e3e6;
+  --sl-color-accent: #8c1d2e;
+  --sl-color-accent-high: #5e1220;
+}
+
+/* Video blocks on Start here and Videos pages */
+.tutorial-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
+  background: var(--sl-color-gray-6);
+}

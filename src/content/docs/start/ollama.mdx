@@ -1,0 +1,49 @@
+---
+title: 3. Ollama and the model
+description: Install Ollama and create the course model, which runs on your own laptop.
+---
+
+import { Tabs, TabItem, Steps, Aside } from "@astrojs/starlight/components"
+import TutorialVideo from "../../../components/TutorialVideo.astro"
+
+<TutorialVideo id="A3" title="Ollama and the course model" />
+
+MuleCode doesn't send your code to a cloud service. The model runs on your laptop through [Ollama](https://ollama.com).
+
+<Aside type="caution" title="Provisional model">
+The course model is chosen in December. Until then these steps use `qwen3.5:9b`. If this note is still here in January, check Canvas before downloading.
+</Aside>
+
+<Steps>
+
+1. **Install Ollama** from [ollama.com/download](https://ollama.com/download) and open it. On a Mac you can instead run `brew install --cask ollama`. It runs in the background, and you'll see its icon in the menu bar (Mac) or the system tray (Windows).
+2. **Download the model** (about 6 GB):
+
+   ```bash
+   ollama pull qwen3.5:9b
+   ```
+
+3. **Make the course version of it.** MuleCode asks for a model named `mule-coder`, with a 32k context window. Without this step Ollama loads the model with a much larger window and uses far more memory.
+
+   <Tabs syncKey="os">
+   <TabItem label="macOS">
+
+   ```bash
+   printf 'FROM qwen3.5:9b\nPARAMETER num_ctx 32768\n' > /tmp/Modelfile
+   ollama create mule-coder -f /tmp/Modelfile
+   ```
+
+   </TabItem>
+   <TabItem label="Windows">
+
+   ```powershell
+   "FROM qwen3.5:9b`nPARAMETER num_ctx 32768" | Out-File -Encoding ascii "$env:TEMP\Modelfile"
+   ollama create mule-coder -f "$env:TEMP\Modelfile"
+   ```
+
+   </TabItem>
+   </Tabs>
+
+</Steps>
+
+The first answer after starting Ollama can take a minute while the model loads into memory. After that it's much faster.

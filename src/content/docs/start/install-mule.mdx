@@ -1,0 +1,87 @@
+---
+title: 2. Install mule
+description: Install MuleCode with Homebrew on macOS or Scoop on Windows, then copy in the course config.
+---
+
+import { Tabs, TabItem, Steps, Aside } from "@astrojs/starlight/components"
+import TutorialVideo from "../../../components/TutorialVideo.astro"
+
+<Tabs syncKey="os">
+<TabItem label="macOS">
+
+<TutorialVideo id="A1" title="Install mule on a Mac" />
+
+<Steps>
+
+1. Install [Homebrew](https://brew.sh) if `brew --version` doesn't answer in Terminal.
+2. Install MuleCode. It also installs `gh`, the GitHub command line:
+
+   ```bash
+   brew install muhlenberg-cs/mule/mule
+   ```
+
+3. Copy the course config into place. This never overwrites files you already have:
+
+   ```bash
+   mkdir -p ~/.config/mulecode && cp -Rn "$(brew --prefix)/opt/mule/share/mule/config/" ~/.config/mulecode/
+   ```
+
+4. Check it:
+
+   ```bash
+   mule --version
+   ```
+
+   You should see `0.1.0 (opencode 1.19.3)` or newer.
+
+</Steps>
+
+</TabItem>
+<TabItem label="Windows">
+
+<TutorialVideo id="A2" title="Install mule on Windows" />
+
+Homebrew doesn't run on Windows, so MuleCode installs with [Scoop](https://scoop.sh), which works the same way. Use **PowerShell** (not Command Prompt) for every step.
+
+<Steps>
+
+1. Install Scoop if `scoop --version` doesn't answer:
+
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+   ```
+
+2. Install MuleCode. It also installs `gh`, the GitHub command line:
+
+   ```powershell
+   scoop bucket add mule https://github.com/muhlenberg-cs/homebrew-mule
+   scoop install mule/mule
+   ```
+
+3. Copy the course config into place. This never overwrites files you already have:
+
+   ```powershell
+   robocopy "$(scoop prefix mule)\config" "$HOME\.config\mulecode" /E /XC /XN /XO /NJH /NJS
+   ```
+
+4. Check it:
+
+   ```powershell
+   mule --version
+   ```
+
+   You should see `0.1.0 (opencode 1.19.3)` or newer.
+
+</Steps>
+
+<Aside type="caution">
+On Windows, commands the agent runs aren't sandboxed. On a Mac they can only write inside your project. Read what a command does before you approve it.
+</Aside>
+
+</TabItem>
+</Tabs>
+
+## Updating
+
+The version is fixed for the semester. When you're told in class to update, run `brew upgrade mule` (macOS) or `scoop update mule` (Windows).

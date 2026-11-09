@@ -1,0 +1,33 @@
+---
+title: 6. Check it all works
+description: Three commands that show GitHub, Ollama and MuleCode are ready for week 1.
+---
+
+import { Steps } from "@astrojs/starlight/components"
+import TutorialVideo from "../../../components/TutorialVideo.astro"
+
+<TutorialVideo id="A4" title="Your first mule run" />
+
+<Steps>
+
+1. **Ollama answers.** This lists loaded models, and an empty list is fine:
+
+   ```bash
+   ollama ps
+   ```
+
+2. **MuleCode sees the course models.** You should see `local/coder`:
+
+   ```bash
+   mule models local
+   ```
+
+3. **The model replies.** The first reply can take a minute while the model loads:
+
+   ```bash
+   mule run --agent sketch "say hi"
+   ```
+
+</Steps>
+
+All three worked? You're ready for week 1. If one failed, copy the exact error and bring it to class, or check [Troubleshooting](/mule/troubleshooting/).

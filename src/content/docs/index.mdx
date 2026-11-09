@@ -1,0 +1,35 @@
+---
+title: CSI 370 · CUE
+description: Capstone software engineering with MuleCode at Muhlenberg College, Spring 2027.
+template: splash
+hero:
+  tagline: A semester-long team project, built with a coding agent you learn to trust one stage at a time.
+  image:
+    file: ../../assets/mulecode-app-icon.svg
+  actions:
+    - text: Start here
+      link: /start/
+      icon: right-arrow
+    - text: Schedule
+      link: /schedule/
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components"
+
+<CardGrid>
+  <Card title="Before the first class" icon="rocket">
+    Set up GitHub, install `mule` and the course model, and check it works. About an hour. [Start here](/start/).
+  </Card>
+  <Card title="MuleCode" icon="seti:shell">
+    The course's coding agent runs a model on your own laptop. It earns more autonomy across four stages. [Modes and stages](/mule/modes/).
+  </Card>
+  <Card title="Icebergs" icon="magnifier">
+    The chat is the tip. An iceberg is everything underneath: what the agent saw, did and was allowed to do. [Reading an iceberg](/mule/iceberg/).
+  </Card>
+  <Card title="Your team on GitHub" icon="github">
+    Issues, branches, pull requests, reviews and two-week sprints. [The team flow](/github/team-flow/).
+  </Card>
+</CardGrid>
+
+Tuesdays are **Trail Talk** (a seminar and team work). Thursdays are **Studio** (a live iceberg teardown and team work). The full plan is on the [schedule](/schedule/), and the rules are in the [syllabus and policies](/policies/).

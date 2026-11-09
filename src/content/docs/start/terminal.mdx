@@ -1,0 +1,25 @@
+---
+title: 4. Terminal and font
+description: Optional. Match your terminal's font and colors to MuleCode.
+---
+
+import { Aside } from "@astrojs/starlight/components"
+
+`mule` runs inside your terminal, and the terminal decides the font and the colors around it. This step is optional, but the course font and colors make diagrams and diffs easier to read. Inside `mule`, `/theme` picks one of seven themes (`pasture` is the default). Pick the same name here.
+
+## 1. Install the font
+
+The font is JetBrains Mono. On a Mac, run `brew install --cask font-jetbrains-mono`. On Windows, download it from [jetbrains.com/lp/mono](https://www.jetbrains.com/lp/mono/) and install the `.ttf` files.
+## 2. Load a profile for your terminal
+
+| Terminal | What to do |
+|---|---|
+| **Ghostty** (macOS) | Download the [theme files](https://github.com/muhlenberg-cs/muhlenberg-cs.github.io/tree/main/public/terminal/ghostty) into `~/.config/ghostty/themes/`. In `~/.config/ghostty/config`, add `font-family = JetBrains Mono` and `theme = dark:pasture,light:pasture-light`. |
+| **iTerm2** (macOS) | Download [MuleCode.json](/terminal/iterm2/MuleCode.json) into `~/Library/Application Support/iTerm2/DynamicProfiles/`. Then pick "MuleCode pasture" in Settings → Profiles. |
+| **Windows Terminal** | Download [mulecode.json](/terminal/windows-terminal/mulecode.json) into `%LOCALAPPDATA%\Microsoft\Windows Terminal\Fragments\MuleCode\`, then restart Windows Terminal. A "MuleCode" profile appears. |
+| **VS Code terminal** | Open your user `settings.json` and paste in the contents of a theme file, e.g. [pasture.json](/terminal/vscode/pasture.json). |
+
+
+<Aside type="note">
+macOS Terminal.app can't load these colors from a file. `mule` works there, but use Ghostty or iTerm2 for the course colors.
+</Aside>

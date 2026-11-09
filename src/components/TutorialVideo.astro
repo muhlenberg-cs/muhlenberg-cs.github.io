@@ -1,0 +1,28 @@
+---
+// A tutorial clip from public/videos/<id>.mp4 with captions from <id>.vtt.
+// Until the clip exists, it shows a short placeholder, so pages can name their video ahead of time.
+import fs from "node:fs"
+import path from "node:path"
+
+const { id, title } = Astro.props
+const base = path.join(process.cwd(), "public/videos", id)
+const ready = fs.existsSync(`${base}.mp4`)
+const captions = fs.existsSync(`${base}.vtt`)
+---
+
+{
+  ready ? (
+    <figure>
+      <video class="tutorial-video" controls preload="metadata" src={`/videos/${id}.mp4`}>
+        {captions && <track kind="captions" srclang="en" label="English" src={`/videos/${id}.vtt`} default />}
+      </video>
+      <figcaption>
+        {title} · <a href={`/videos/#${id.toLowerCase()}`}>transcript</a>
+      </figcaption>
+    </figure>
+  ) : (
+    <p class="sl-video-pending">
+      <em>Video coming: {title}. The written steps below are complete without it.</em>
+    </p>
+  )
+}

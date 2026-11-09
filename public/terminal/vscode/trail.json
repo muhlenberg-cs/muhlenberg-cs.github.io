@@ -1,0 +1,50 @@
+{
+  "terminal.integrated.fontFamily": "'JetBrains Mono', monospace",
+  "terminal.integrated.fontSize": 14,
+  "workbench.colorCustomizations": {
+    "[Default Dark Modern]": {
+      "terminal.background": "#141A16",
+      "terminal.foreground": "#E9E6D8",
+      "terminalCursor.foreground": "#8FBF7F",
+      "terminal.selectionBackground": "#394C36",
+      "terminal.ansiBlack": "#212622",
+      "terminal.ansiBrightBlack": "#61635C",
+      "terminal.ansiRed": "#E8737F",
+      "terminal.ansiBrightRed": "#E88A91",
+      "terminal.ansiGreen": "#8CC79B",
+      "terminal.ansiBrightGreen": "#9FCDA7",
+      "terminal.ansiYellow": "#E8C872",
+      "terminal.ansiBrightYellow": "#E8CE86",
+      "terminal.ansiBlue": "#7FA8E0",
+      "terminal.ansiBrightBlue": "#94B4DE",
+      "terminal.ansiMagenta": "#C79BE0",
+      "terminal.ansiBrightMagenta": "#CEAADE",
+      "terminal.ansiCyan": "#7CC4CF",
+      "terminal.ansiBrightCyan": "#92CBD1",
+      "terminal.ansiWhite": "#99A391",
+      "terminal.ansiBrightWhite": "#E9E6D8"
+    },
+    "[Default Light Modern]": {
+      "terminal.background": "#F5F4EC",
+      "terminal.foreground": "#1C211D",
+      "terminalCursor.foreground": "#3F7A35",
+      "terminal.selectionBackground": "#BECFB5",
+      "terminal.ansiBlack": "#E8E7E0",
+      "terminal.ansiBrightBlack": "#A7A8A1",
+      "terminal.ansiRed": "#B3261E",
+      "terminal.ansiBrightRed": "#C04F47",
+      "terminal.ansiGreen": "#2E7D4F",
+      "terminal.ansiBrightGreen": "#56956E",
+      "terminal.ansiYellow": "#8A6A00",
+      "terminal.ansiBrightYellow": "#9F862F",
+      "terminal.ansiBlue": "#2F5E9E",
+      "terminal.ansiBrightBlue": "#577CAE",
+      "terminal.ansiMagenta": "#8A3FA0",
+      "terminal.ansiBrightMagenta": "#9F63AF",
+      "terminal.ansiCyan": "#1F6E8C",
+      "terminal.ansiBrightCyan": "#4A899F",
+      "terminal.ansiWhite": "#5C6658",
+      "terminal.ansiBrightWhite": "#1C211D"
+    }
+  }
+}
